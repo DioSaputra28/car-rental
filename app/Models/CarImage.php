@@ -77,6 +77,17 @@ class CarImage extends Model
      */
     protected static function booted(): void
     {
+        static::updated(function (self $model) {
+            if ($model->isDirty('path')) {
+                $oldPath = $model->getOriginal('path');
+                if ($oldPath && $model->path !== $oldPath) {
+                    if (Storage::disk('public')->exists($oldPath)) {
+                        Storage::disk('public')->delete($oldPath);
+                    }
+                }
+            }
+        });
+
         static::deleted(function (self $model) {
             if ($model->path) {
                 if (Storage::disk('public')->exists($model->path)) {
