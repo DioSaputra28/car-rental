@@ -20,9 +20,26 @@ class CarResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'Manage Car';
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?int $navigationSort = 3;
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name', 'slug'];
+    }
+
+    public static function getGlobalSearchResultTitle($record): string
+    {
+        return $record->name;
+    }
+
+    public static function getGlobalSearchResultDetails($record): array
+    {
+        return [
+            'Slug' => $record->slug,
+        ];
+    }
 
     public static function form(Schema $schema): Schema
     {
