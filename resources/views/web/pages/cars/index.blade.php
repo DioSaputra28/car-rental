@@ -79,15 +79,18 @@
                         <span class="text-lg font-bold text-white block">Tarif sewa chat Admin</span>
                     </div>
 
-                    <div class="flex items-center justify-between">
+                    <div class="flex flex-col gap-3">
+                        <a href="{{ route('cars.show', $car->slug) }}" class="bg-white text-black px-8 py-3 rounded-xl font-bold uppercase hover:bg-brand-yellow transition-all w-full text-center">
+                            Lihat Detail
+                        </a>
                         @php
                         $whatsapp = get_site_whatsapp();
                         $orderUrl = $whatsapp
                         ? 'https://wa.me/' . preg_replace('/[^0-9]/', '', $whatsapp) . '?text=' . urlencode('Halo, saya tertarik untuk menyewa mobil ' . $car->name)
                         : route('contact');
                         @endphp
-                        <a href="{{ $orderUrl }}" target="{{ $whatsapp ? '_blank' : '_self' }}" class="bg-brand-yellow text-black px-8 py-3 rounded-xl font-bold uppercase hover:bg-white transition-all w-full text-center">
-                            Order Now
+                        <a href="{{ $orderUrl }}" target="{{ $whatsapp ? '_blank' : '_self' }}" class="bg-brand-yellow text-black px-8 py-3 rounded-xl font-bold uppercase hover:bg-white transition-all w-full text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Order Now
                         </a>
                     </div>
                 </div>

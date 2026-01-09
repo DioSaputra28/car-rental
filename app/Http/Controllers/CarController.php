@@ -13,4 +13,11 @@ class CarController extends Controller
 
         return view('web.pages.cars.index', compact('cars'));
     }
+
+    public function show($slug)
+    {
+        $car = Car::where('slug', $slug)->with('images')->firstOrFail();
+
+        return view('web.pages.cars.single', compact('car'));
+    }
 }

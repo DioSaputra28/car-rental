@@ -20,3 +20,4 @@ Route::get('/contact', function () {
 
 Route::get('/galery', [GaleryController::class, 'index'])->name('galery');
 Route::get('/cars', [\App\Http\Controllers\CarController::class, 'index'])->name('cars.index');
+Route::get('/cars/{slug}', [\App\Http\Controllers\CarController::class, 'show'])->name('cars.show');
