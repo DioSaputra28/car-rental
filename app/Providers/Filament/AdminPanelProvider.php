@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName(fn() => settings()->site_name ?? 'Car Rental')
+            ->favicon(fn() => get_site_favicon_url())
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->colors([
                 'primary' => Color::Amber,

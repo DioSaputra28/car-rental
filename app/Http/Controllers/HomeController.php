@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $featuredCars = Car::where('is_featured', true)->get();
 
-        $galleries = Galery::limit(8)->get();
+        $galleries = Galery::where('is_featured', true)->limit(8)->get();
 
         return view('web.pages.home', [
             "featured_cars" => $featuredCars,

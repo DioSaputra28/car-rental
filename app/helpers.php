@@ -100,7 +100,7 @@ if (!function_exists('get_site_logo_url')) {
     function get_site_logo_url(): ?string
     {
         $logoPath = settings()->site_logo_path;
-        
+
         if (empty($logoPath)) {
             return null;
         }
@@ -118,7 +118,7 @@ if (!function_exists('get_site_favicon_url')) {
     function get_site_favicon_url(): string
     {
         $favicon = settings()->site_favicon;
-        
+
         if (empty($favicon)) {
             return asset('favicon.ico');
         }
@@ -130,5 +130,35 @@ if (!function_exists('get_site_favicon_url')) {
 
         // Otherwise, assume it's in storage
         return asset('storage/' . $favicon);
+    }
+}
+
+if (!function_exists('get_business_hours')) {
+    /**
+     * Get business hours from settings.
+     *
+     * @return string|null
+     */
+    function get_business_hours(): ?string
+    {
+        return settings()->business_hours;
+    }
+}
+
+if (!function_exists('get_social_media')) {
+    /**
+     * Get social media URLs from settings.
+     *
+     * @return array
+     */
+    function get_social_media(): array
+    {
+        return [
+            'instagram' => settings()->site_instagram_url,
+            'facebook' => settings()->site_facebook_url,
+            'tiktok' => settings()->site_tiktok_url,
+            'youtube' => settings()->site_youtube_url,
+            'twitter' => settings()->site_twitter_url,
+        ];
     }
 }

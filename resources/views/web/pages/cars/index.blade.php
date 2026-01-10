@@ -1,4 +1,4 @@
-@extends('web.layouts.app')
+    @extends('web.layouts.app')
 
 @section('title', 'Our Fleet - Premium Car Rental')
 
@@ -28,7 +28,7 @@
                     <label for="search" class="block text-brand-yellow font-bold text-sm uppercase tracking-wider mb-2">Cari Mobil</label>
                     <div class="relative">
                         <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                        <input type="text" id="search" name="search" placeholder="Contoh: Alphard, Fortuner..."
+                        <input type="text" id="search" name="search" value="{{ $searchTerm ?? '' }}" placeholder="Contoh: Alphard, Fortuner..."
                             class="w-full bg-black/50 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all placeholder-gray-600">
                     </div>
                 </div>
@@ -47,7 +47,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="flex justify-between items-center mb-10 border-b border-white/10 pb-4">
-            <h3 class="text-2xl font-bold text-white uppercase"><span class="text-brand-yellow">{{ count($cars) }}</span> Mobil Tersedia</h3>
+            <h3 class="text-2xl font-bold text-white uppercase">
+                <span class="text-brand-yellow">{{ count($cars) }}</span> Mobil Tersedia
+                @if($searchTerm)
+                <span class="text-gray-400 text-base normal-case font-normal ml-2">untuk "{{ $searchTerm }}"</span>
+                @endif
+            </h3>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,10 +103,17 @@
             @empty
             <div class="col-span-full text-center py-20">
                 <div class="inline-block p-6 rounded-full bg-white/5 mb-4">
-                    <i class="fas fa-car text-4xl text-gray-500"></i>
+                    <i class="fas fa-search text-4xl text-gray-500"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Armada Tidak Ditemukan</h3>
-                <p class="text-gray-400">Maaf, kami tidak dapat menemukan mobil yang Anda cari saat ini.</p>
+                <h3 class="text-xl font-bold text-white mb-2">Mobil Tidak Ditemukan</h3>
+                @if($searchTerm)
+                <p class="text-gray-400 mb-4">Maaf, kami tidak dapat menemukan mobil dengan kata kunci "<span class="text-brand-yellow font-semibold">{{ $searchTerm }}</span>".</p>
+                <a href="{{ route('cars.index') }}" class="inline-block bg-brand-yellow text-black px-6 py-3 rounded-xl font-bold uppercase hover:bg-white transition-all">
+                    <i class="fas fa-redo mr-2"></i>Lihat Semua Mobil
+                </a>
+                @else
+                <p class="text-gray-400">Maaf, saat ini belum ada mobil yang tersedia.</p>
+                @endif
             </div>
             @endforelse
         </div>

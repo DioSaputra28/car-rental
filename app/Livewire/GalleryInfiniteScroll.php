@@ -28,7 +28,8 @@ class GalleryInfiniteScroll extends Component
 
     private function loadGalleries()
     {
-        $galleriesData = Galery::latest()->get();
+        $galleriesData = Galery::where('is_featured', true)->latest()->get();
+
 
         $carGalleryImages = CarImage::where('is_galery', true)
             ->latest()

@@ -6,7 +6,7 @@
 <!-- Hero Banner Section -->
 <section class="relative h-[70vh] bg-black overflow-hidden">
     <div class="absolute inset-0">
-        <img src="{{ asset('assets/img/about_hero.png') }}" alt="About LuxeDrive" class="w-full h-full object-cover opacity-60">
+        <img src="{{ asset('assets/img/about_hero.png') }}" alt="About {{ get_site_name() }}" class="w-full h-full object-cover opacity-60">
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
     </div>
     <div class="relative z-10 h-full flex items-center">
@@ -35,7 +35,7 @@
                 <div class="relative group">
                     <!-- Main Image -->
                     <div class="relative overflow-hidden rounded-3xl">
-                        <img src="{{ asset('assets/img/showroom.png') }}" alt="LuxeDrive Showroom" class="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="{{ asset('assets/img/showroom.png') }}" alt="{{ get_site_name() }} Showroom" class="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
 
                 <div class="space-y-6 text-gray-400 text-lg leading-relaxed mb-10">
                     <p>
-                        Sejak tahun 2026, <span class="text-white font-bold">LuxeDrive</span> telah menjadi pilihan utama untuk layanan rental mobil premium di Jakarta dan sekitarnya.
+                        Sejak tahun 2026, <span class="text-white font-bold">{{ get_site_name() }}</span> telah menjadi pilihan utama untuk layanan rental mobil premium di Jakarta dan sekitarnya.
                     </p>
                     <p>
                         Dengan lebih dari <span class="text-brand-yellow font-bold">50+ armada premium</span> dan <span class="text-brand-yellow font-bold">500+ pelanggan puas</span>, kami bangga menjadi mitra terpercaya untuk perjalanan bisnis, acara spesial, hingga liburan keluarga Anda.

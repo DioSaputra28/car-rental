@@ -97,10 +97,9 @@ class ManageSetting extends SettingsPage
                             ->label('Favicon')
                             ->disk('public')
                             ->directory('branding')
-                            ->image()
                             ->imageEditor()
                             ->maxSize(512)
-                            ->acceptedFileTypes(['image/png', 'image/x-icon', 'image/vnd.microsoft.icon'])
+                            ->acceptedFileTypes(['image/png', 'image/x-png', 'image/x-icon', 'image/vnd.microsoft.icon', 'image/ico'])
                             ->helperText('Recommended size: 32x32px or 16x16px. Max 512KB. Formats: PNG, ICO'),
                     ])
                     ->columns(2),

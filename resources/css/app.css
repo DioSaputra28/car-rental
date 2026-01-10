@@ -13,16 +13,22 @@
     --color-brand-dark: #1a1a1a;
 }
 
-/* Custom Styles */
-body {
-    font-family: "Outfit", sans-serif;
-    background-color: #000000;
-    color: #ffffff;
-}
+/* Apply Outfit font globally */
+@layer base {
+    * {
+        font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    }
+    
+    body {
+        font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+        background-color: #000000;
+        color: #ffffff;
+    }
 
-h1, h2, h3, .font-heading {
-    font-family: "Outfit", sans-serif;
-    letter-spacing: -0.02em;
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: -0.02em;
+    }
 }
 
 .swiper-button-next, .swiper-button-prev {

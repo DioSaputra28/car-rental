@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Premium Car Rental | Luxury & Performance')</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="{{ get_site_favicon_url() }}" type="image/x-icon">
+
     <!-- Tailwind CSS & JS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
