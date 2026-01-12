@@ -1,6 +1,12 @@
 @extends('web.layouts.app')
 
-@section('title', 'Gallery - Premium Car Rental')
+@section('meta_title', 'Galeri Foto - ' . get_site_name() . ' | Dokumentasi Rental Mobil Jakarta')
+@section('meta_description', 'Lihat galeri foto dokumentasi layanan rental mobil premium kami. Foto armada mobil, momen perjalanan pelanggan, dan showroom ' . get_site_name() . ' di Jakarta.')
+@section('meta_keywords', 'galeri foto, dokumentasi rental mobil, foto armada, showroom mobil jakarta')
+
+@section('og_title', 'Galeri Foto - ' . get_site_name())
+@section('og_description', 'Dokumentasi visual layanan rental mobil premium kami di Jakarta.')
+@section('og_image', asset('assets/img/hero_banner_1.png'))
 
 @section('content')
 <!-- Gallery Section -->

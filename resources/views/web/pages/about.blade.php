@@ -1,6 +1,12 @@
 @extends('web.layouts.app')
 
-@section('title', 'About Us - Premium Car Rental')
+@section('meta_title', 'Tentang Kami - ' . get_site_name() . ' | Rental Mobil Premium Jakarta')
+@section('meta_description', 'Sejak 2026, ' . get_site_name() . ' menjadi pilihan utama rental mobil premium di Jakarta. Lebih dari 50+ armada premium dan 500+ pelanggan puas. Showroom terpercaya dengan layanan profesional.')
+@section('meta_keywords', 'tentang kami, profil perusahaan, rental mobil jakarta, showroom mobil, sewa mobil terpercaya')
+
+@section('og_title', 'Tentang ' . get_site_name() . ' - Rental Mobil Premium Jakarta')
+@section('og_description', 'Penyedia rental mobil premium terpercaya di Jakarta sejak 2026. Armada terbaru, pelayanan profesional, kepuasan pelanggan terjamin.')
+@section('og_image', asset('assets/img/showroom.png'))
 
 @section('content')
 <!-- Hero Banner Section -->

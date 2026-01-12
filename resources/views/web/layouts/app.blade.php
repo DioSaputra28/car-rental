@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Premium Car Rental | Luxury & Performance')</title>
+    @include('web.layouts.partials.meta-tags')
 
     <!-- Favicon -->
     <link rel="icon" href="{{ get_site_favicon_url() }}" type="image/x-icon">

@@ -1,6 +1,13 @@
 @extends('web.layouts.app')
 
-@section('title', $car->name . ' - Premium Car Rental')
+@section('meta_title', 'Sewa ' . $car->name . ' Jakarta - ' . get_site_name() . ' | Rental Mobil Premium')
+@section('meta_description', 'Sewa ' . $car->name . ' di Jakarta dengan harga terbaik. ' . ($car->description ? Str::limit($car->description, 120) : 'Kondisi prima, driver profesional, layanan 24/7. Booking mudah via WhatsApp.'))
+@section('meta_keywords', 'sewa ' . strtolower($car->name) . ', rental ' . strtolower($car->name) . ', ' . strtolower($car->name) . ' jakarta, sewa mobil premium')
+
+@section('og_title', 'Sewa ' . $car->name . ' - ' . get_site_name())
+@section('og_description', 'Rental ' . $car->name . ' premium di Jakarta. Harga kompetitif, kondisi terbaik, booking mudah.')
+@section('og_image', $car->image_url ?? asset('assets/img/car-detail-banner.png'))
+@section('og_type', 'product')
 
 @section('content')
 <!-- Hero Banner Section -->

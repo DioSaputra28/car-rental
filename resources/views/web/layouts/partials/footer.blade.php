@@ -85,7 +85,6 @@
 
         <div class="pt-8 border-t border-brand-yellow/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <p class="text-gray-500 text-xs">© {{ date('Y') }} {{ strtoupper(get_site_name()) }}. ALL RIGHTS RESERVED.</p>
-            <p class="text-gray-500 text-xs">DESIGNED BY <span class="text-brand-yellow font-bold">DIO SAPUTRA</span></p>
         </div>
     </div>
 </footer>

@@ -1,6 +1,12 @@
 @extends('web.layouts.app')
 
-@section('title', 'Home - Premium Car Rental')
+@section('meta_title', 'Sewa Mobil Premium Jakarta | ' . get_site_name() . ' - Rental Mobil Terpercaya')
+@section('meta_description', 'Sewa mobil premium di Jakarta dengan harga terbaik. Armada terbaru Alphard, Fortuner, Innova dengan driver profesional. Layanan 24/7, booking mudah via WhatsApp.')
+@section('meta_keywords', 'sewa mobil jakarta, rental mobil jakarta, sewa alphard jakarta, rental fortuner jakarta, sewa mobil dengan driver, rental mobil premium, sewa mobil murah jakarta')
+
+@section('og_title', 'Sewa Mobil Premium Jakarta - ' . get_site_name())
+@section('og_description', 'Rental mobil premium terpercaya di Jakarta. Armada terbaru, driver berpengalaman, harga kompetitif. Booking sekarang!')
+@section('og_image', asset('assets/img/hero_banner_1.png'))
 
 @section('content')
 <!-- Hero Section -->

@@ -1,6 +1,12 @@
 @extends('web.layouts.app')
 
-@section('title', 'Contact Us - Premium Car Rental')
+@section('meta_title', 'Hubungi Kami - ' . get_site_name() . ' | Kontak Rental Mobil Jakarta')
+@section('meta_description', 'Hubungi ' . get_site_name() . ' untuk informasi sewa mobil premium di Jakarta. Layanan customer service 24/7 siap membantu Anda. Chat WhatsApp, telepon, atau kunjungi showroom kami.')
+@section('meta_keywords', 'kontak, hubungi kami, customer service, booking mobil, whatsapp rental mobil')
+
+@section('og_title', 'Hubungi ' . get_site_name() . ' - Rental Mobil Premium Jakarta')
+@section('og_description', 'Customer service 24/7 siap melayani. Booking mudah via WhatsApp atau telepon.')
+@section('og_image', asset('assets/img/about_hero.png'))
 
 @section('content')
 <!-- Contact Section -->
